@@ -10,6 +10,8 @@
 
 Broken links · committed secrets · dead files · dependencies that 404 on install — the rot that piles up in every repo and only bites at the worst time. `rotscan` finds it, shows you the *extent first*, and cleans it with confirmation.
 
+<img src="assets/rotscan-hero.gif" alt="rotscan — find & clear repo rot: sweep, drill, fix" width="820">
+
 </div>
 
 ---
@@ -35,29 +37,27 @@ bun rotscan.ts --all ~/code    # scan EVERY git repo under a folder — 10 or 10
 bun rotscan.ts --fix .         # plan the cleanup (dry run); add --apply to write it
 ```
 
-## What you get
+## How it works
 
-- **Summary-first.** A count per category so you see the *extent* before any details — never a wall of output.
-- **Multi-repo.** `--all <dir>` sweeps every git repo under a folder and ranks them by rot. Built for the pile of side projects you never audited.
-- **Report-first, fix-on-purpose.** `--fix` prints the exact change plan and writes *nothing*; `--apply` makes the edits. It only de-links broken/gitignored text links — secrets, deps, images, and file deletions stay manual (their fix is judgement, not a line-edit).
-- **Portable.** Any git repo. No config.
+rotscan reads only what **git tracks** — so it sees your repo the way a stranger, or your CI, does, not the way your laptop does (where a gitignored file or a wrong-case path quietly resolves). No config, any git repo. Three moves:
 
-```
-$ bunx rotscan
+### 1. Sweep — see the whole pile at a glance
 
-📋  rotscan — my-app
+<p align="center"><img src="assets/step-1-sweep.gif" alt="rotscan --all sweeping every repo under a folder, ranked by rot" width="760"></p>
 
-  🔗 Links        3 found
-  🔑 Secrets      clean
-  🗑  Dead files   1 found
-  📦 Deps         clean
+`rotscan --all <dir>` scans every git repo under a folder and ranks them by rot — ten repos or a hundred, one table. The **summary is the point**: a count per category, the messy repos on top, the clean ones marked `✓ tidy`. You see *where* the rot is before reading a single detail.
 
-  Recommended next steps:
-   • 🔗 Links: 3 broken/gitignored link(s) — wrong paths or targets that ship nowhere
-   • 🗑 Dead files: 1 orphaned asset — referenced nowhere; safe to prune
+### 2. Drill — one repo, summary-first
 
-  What next?  drill in: --links --files   ·   then clean with: --fix (shows each change first)
-```
+<p align="center"><img src="assets/step-2-drill.gif" alt="rotscan scanning one repo: four counts first, then capped details" width="760"></p>
+
+`rotscan <repo>` opens one repo: the four counts first — 🔗 links · 🔑 secrets · 🗑 dead files · 📦 deps — then a few details per category (capped, never a wall). The lines that actually bite show up by name: a link that's the **wrong case** (passes on macOS, 404s on Linux CI), a **key that shipped in a commit**, a **dependency that doesn't exist on npm**.
+
+### 3. Fix — on purpose, never by surprise
+
+<p align="center"><img src="assets/step-3-fix.gif" alt="rotscan --fix printing a plan; nothing written without --apply" width="760"></p>
+
+`rotscan --fix <repo>` prints a plan and writes **nothing**; add `--apply` to make the edits. It only ever de-links broken markdown links (keeping the text). Everything that needs judgement — rotate a leaked key, delete an unused asset, swap a dead package — is listed as **manual**, not auto-done. Safe by default.
 
 ## Built with Hamzaish
 

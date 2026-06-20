@@ -1,0 +1,40 @@
+{
+  "name": "rotscan",
+  "version": "0.1.0",
+  "description": "Find & clear repo rot — broken/gitignored/wrong-case links, committed secrets, dead files, npm-unresolvable deps. One repo or 100 at once. Born from the Hamzaish factory.",
+  "type": "module",
+  "bin": {
+    "rotscan": "./rotscan.ts"
+  },
+  "files": [
+    "rotscan.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rot",
+    "repo-rot",
+    "cleanup",
+    "broken-links",
+    "link-checker",
+    "dead-code",
+    "secrets-scan",
+    "monorepo",
+    "repo-maintenance",
+    "cli",
+    "bun"
+  ],
+  "homepage": "https://github.com/hamza-ali-shahjahan/rotscan#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza-ali-shahjahan/rotscan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hamza-ali-shahjahan/rotscan/issues"
+  },
+  "author": "Hamza Ali (https://github.com/hamza-ali-shahjahan)",
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

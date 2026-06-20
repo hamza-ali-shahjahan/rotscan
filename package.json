@@ -4,9 +4,10 @@
   "description": "Find & clear repo rot — broken/gitignored/wrong-case links, committed secrets, dead files, npm-unresolvable deps. One repo or 100 at once. Born from the Hamzaish factory.",
   "type": "module",
   "bin": {
-    "rotscan": "./rotscan.ts"
+    "rotscan": "bin/rotscan"
   },
   "files": [
+    "bin/rotscan",
     "rotscan.ts",
     "README.md",
     "LICENSE"

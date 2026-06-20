@@ -1,0 +1,5 @@
+#!/usr/bin/env bun
+// rotscan launcher — an npm-safe bin entry: its basename is `rotscan` (no `.ts`),
+// which npm accepts and symlinks cleanly, unlike pointing bin straight at the .ts.
+// It just runs the real CLI; process.argv passes through untouched.
+import "../rotscan.ts";

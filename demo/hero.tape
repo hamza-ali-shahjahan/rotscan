@@ -41,6 +41,6 @@ Sleep 5200ms
 Type "# survey -> drill -> clean.  nothing written without --apply."
 Enter
 Sleep 1200ms
-Type "# npm i -g rotscan   |   bunx rotscan   |   born from Hamzaish"
+Type "# find the rot, clean on purpose   |   born from Hamzaish"
 Enter
 Sleep 3200ms

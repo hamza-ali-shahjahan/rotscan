@@ -4,7 +4,7 @@
 
 **Find & clear repo rot — one repo, or 100 at once.**
 
-[![npm](https://img.shields.io/npm/v/rotscan?color=cb3837&label=npm)](https://www.npmjs.com/package/rotscan)
+[![npm](https://img.shields.io/npm/v/@hamzaish/rotscan?color=cb3837&label=npm)](https://www.npmjs.com/package/@hamzaish/rotscan)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![built with Hamzaish](https://img.shields.io/badge/built_with-Hamzaish-d97757.svg)](https://github.com/hamza-ali-shahjahan/hamzaish)
 
@@ -26,16 +26,22 @@ It's invisible day-to-day and surfaces at the worst moment: a reader's 404, a fa
 
 ## Quickstart
 
-Requires [Bun](https://bun.sh). Until rotscan lands on npm (imminent — then `bunx rotscan` from anywhere), run it straight from the repo:
+Requires [Bun](https://bun.sh) (Node support is on the roadmap). No install needed:
 
 ```bash
-git clone https://github.com/hamza-ali-shahjahan/rotscan && cd rotscan
-
-bun rotscan.ts                 # scan the current repo → summary + next steps
-bun rotscan.ts ~/code/my-app   # scan a specific repo
-bun rotscan.ts --all ~/code    # scan EVERY git repo under a folder — 10 or 100, ranked by rot
-bun rotscan.ts --fix .         # plan the cleanup (dry run); add --apply to write it
+bunx @hamzaish/rotscan                 # scan the current repo → summary + next steps
+bunx @hamzaish/rotscan ~/code/my-app   # scan a specific repo
+bunx @hamzaish/rotscan --all ~/code    # EVERY git repo under a folder — 10 or 100, ranked by rot
+bunx @hamzaish/rotscan --fix .         # plan the cleanup (dry run); add --apply to write it
 ```
+
+Prefer a short command? Install once and just type `rotscan`:
+
+```bash
+bun add -g @hamzaish/rotscan    # then: rotscan, rotscan --all ~/code, rotscan --fix .
+```
+
+From source: `git clone https://github.com/hamza-ali-shahjahan/rotscan && bun rotscan.ts`.
 
 ## How it works
 

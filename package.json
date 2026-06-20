@@ -1,5 +1,5 @@
 {
-  "name": "rotscan",
+  "name": "@hamzaish/rotscan",
   "version": "0.1.0",
   "description": "Find & clear repo rot — broken/gitignored/wrong-case links, committed secrets, dead files, npm-unresolvable deps. One repo or 100 at once. Born from the Hamzaish factory.",
   "type": "module",
@@ -35,6 +35,9 @@
   },
   "author": "Hamza Ali (https://github.com/hamza-ali-shahjahan)",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "bun": ">=1.0.0"
   }
